@@ -1,0 +1,25 @@
+/* Vos customisations des classes de Bootstrap */
+
+div.jumbotron{
+    color:white;
+    background:url('https://raw.githubusercontent.com/simplon-roanne/bootstrap-onemillionlines/master/Squelette/images/hero-image.jpg');
+}
+
+#code{
+    margin-top: 25px;
+}
+
+
+/* Responsive Styling */
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+
+}
