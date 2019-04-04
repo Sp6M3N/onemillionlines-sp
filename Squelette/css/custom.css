@@ -1,5 +1,7 @@
 /* Vos customisations des classes de Bootstrap */
-
+.icon-color-white{
+    color: white;
+}
 div.jumbotron{
     color:white;
     background:url('https://raw.githubusercontent.com/simplon-roanne/bootstrap-onemillionlines/master/Squelette/images/hero-image.jpg');
