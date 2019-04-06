@@ -11,121 +11,161 @@
   <title>One Million Lines</title>
 
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Arvo">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Custom styles for this template -->
   <link href="css/custom.css" rel="stylesheet">
 </head>
 
 <body>
-
-  <nav class="navbar navbar-dark bg-dark">
-    <div class="row col-12 justify-content-between">
-      <div class="col-4 row justify-content-center align-self-center">
-        <img class="img-responsive  h-50 d-inline-block" src="images\top-logo.png" alt="">
-      </div>
-      <div class="col-3 d-flex justify-content-around">
-        <a class="navbar-brand" href="#who">WHO WE ARE</a>
-        <a class="navbar-brand" href="#get-involved">GET INVOLVED</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="top">
+      <div class="container">
+          <div class="row no-gutter">
+            <div class="">
+    <img src="images\top-logo.png" alt="">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link mr-2" href="#who">WHO WE ARE</a>
+        <a class="nav-item nav-link" href="#get-involved" tabindex="-1">GET INVOLVED</a>
       </div>
     </div>
+    </div>
+    </div>
+    </div>
   </nav>
+  <!-- /#nav -->
 
-  <div id="home" class="jumbotron text-center">
+  <div id="home" class="jumbotron text-center mb-3">
     <div class="container">
-      <h1 class="display-3 "><strong>Our goal is to inspire Tallahassee to write 1,000,000 lines of code_</strong></h1>
-      <p class="lead text-center">All over the country people are taking <strong class="font-weight-bold">THE HOUR OF
-          CODE</strong> challenge issued by <strong class="font-weight-bold">CODE.org</strong>.
-        Millions of lines of code are being written.
-        In the capital of Florida, Tallahassee, the community is taking the challenge and our goal is to write 1,000,000
-        lines of codes_</p>
-      <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-xl">Learn more
-        »</button>
-      <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-            <iframe width="1280" height="722" src="https://www.youtube.com/embed/7Vr1bngah-k" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="row no-gutter">
+        <div class="col-12">
+          <h1 class="display-3 "><strong>Our goal is to inspire Tallahassee to write 1,000,000 lines of code_</strong></h1>
+          <p class="lead text-center">All over the country people are taking <strong class="font-weight-bold">THE HOUR OF
+              CODE</strong> challenge issued by <strong class="font-weight-bold">CODE.org</strong>.
+            Millions of lines of code are being written.
+            In the capital of Florida, Tallahassee, the community is taking the challenge and our goal is to write 1,000,000
+            lines of codes_</p>
+          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Learn more
+            »</button>
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <iframe width="768" height="432" src="https://www.youtube.com/embed/7Vr1bngah-k" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+          <div id="code">
+            <a href="https://code.org" target="_blank"><img src="images\code.png" alt=""></a>
           </div>
         </div>
       </div>
-      <div id="code">
-        <img src="images\code.png" alt="">
+    </div>
+  </div>
+  <!-- /#home -->
+
+  <div id="who" class="text-center my-3">
+    <div class="container">
+      <div class="row no-gutter">
+        <div class="col-12 mt-3">
+          <img src="images/academy-brand-med.png">
+        </div>
+        <div class="col-12 mt-3">
+          <h1 class="text-danger">WHO WE ARE</h1>
+          <hr style="height: 2px; color: red; background-color: red; width: 20%; border: none;">
+          <p mt-3>We ar <span style="color:red">MASSIVE Academy</span>. We aim to improve education through both method -
+            effective project-based learning -
+            and material - by teaching skills that are applicable to improving your life today</p>
+          </div>
       </div>
     </div>
   </div>
-  </div><!-- /#home -->
-
-  <div id="who" class="text-center">
-    <div class="container">
-      <div>
-        <img src="images/academy-brand-med.png">
-      </div>
-      <h1 class="text-danger">WHO WE ARE</h1>
-      <hr style="height: 2px; color: red; background-color: red; width: 20%; border: none;">
-      <p>We ar <span style="color:red">MASSIVE Academy</span>. We aim to improve education through both method -
-        effective project-based learning -
-        and material - by teaching skills that are applicable to improving your life today</p>
-    </div>
-
-  </div><!-- /#who -->
+  <!-- /#who -->
 
   
-    <div id="get-involved" class="text-center">
-      <div class="container">
-        <div class="col">
-            <h1 class="text-danger">GET INVOLVED</h1>
+  <div id="get-involved" class="text-center bg-light mb-3">
+    <div class="container">
+      <div class="row no-gutter">
+        <div class="col-12 mt-3">
+          <h1 class="text-danger">GET INVOLVED</h1>
           <hr style="height: 2px; color: red; background-color: red; width: 20%; border: none;">
         </div>
+        <div class="col-4 my-3">
+          <span class="fa-stack fa-5x">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-user fa-stack-1x" style="color: white;"></i>
+          </span>
+          <h2 class="text-danger">STUDENT</h2>
+          <p>Want to learn how to code? Want to help us to 1,000,000 lines? Click the button bellow and we'll let you know to get involved.</p>
+          <button type="button" class="btn btn-outline-secondary text-danger">Start Learning »</button>
+        </div>
+        <div class="col-4 my-3">
+          <span class="fa-stack fa-5x">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-pencil-alt fa-stack-1x" style="color: white;"></i>
+          </span>
+          <h2 class="text-danger">EDUCATORS</h2>
+          <p>Want to bring this initiative to your school or institution? Awersome! Click the button below and we'll make it happen.</p>
+          <button type="button" class="btn btn-outline-secondary text-danger">Join The Initiative »</button>
+        </div>
+        <div class="col-4 my-3">
+          <span class="fa-stack fa-5x">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-money-bill-alt fa-stack-1x" style="color: white;"></i>
+          </span>
+          <h2 class="text-danger">SPONSORS</h2>
+          <p>We love all the support we get to help host more events, and empower more lives with the knowledge of coding. Click to get involved.</p>
+          <button type="button" class="btn btn-outline-secondary text-danger">Give Support »</button>
+        </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-4">
-          <span class="fa-stack fa-5x">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-user fa-stack-1x icon-color-white"></i>
-          </span>
-        </div>
-        <div class="col-4">
-          <span class="fa-stack fa-5x">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-pencil-alt fa-stack-1x icon-color-white"></i>
-          </span>
-        </div>
-        <div class="col-4">
-          <span class="fa-stack fa-5x">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-money-bill-alt fa-stack-1x icon-color-white"></i>
-          </span>
+    </div>
+  </div>
+  <!-- /#get-involved -->
+
+  <footer class="bg-danger text-white d-flex align-items-end" style="height: 200px">
+      <div class="container">
+        <div class="row no-gutter">
+          <div>
+              <img src="images\top-logo.png" alt="">
+              <p>One Community_One Million Lines of Code_</p>
+          </div>
         </div>
       </div>
-    </div><!-- /#get-involved -->
+  </footer>
 
-    <footer>
-      <!-- Votre code ici -->
-    </footer>
+  <div class="fixed-bottom">
+    <div class="container">
+      <div class="row no-gutter">
+        <div class="col-12 mb-4 d-flex justify-content-end">
+          <a href="#top">
+            <span class="fa-stack fa-2x">
+              <i class="fa fa-circle fa-stack-2x" style="color: black;"></i>
+              <i class="fa fa-angle-up fa-stack-1x" style="color: white;"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div><!-- /#back-to-top -->
 
-    <div id="back-to-top">
-      <!-- Votre code ici -->
-    </div><!-- /#back-to-top -->
-
+  <!-- class="scroll" data-speed="2000"  -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/smoothscroll.js"></script>
 </body>
-
 </html>

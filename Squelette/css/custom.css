@@ -1,8 +1,15 @@
 /* Vos customisations des classes de Bootstrap */
-
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+body{
+    font-family: Arvo;
+}
 div.jumbotron{
     color:white;
     background:url('https://raw.githubusercontent.com/simplon-roanne/bootstrap-onemillionlines/master/Squelette/images/hero-image.jpg');
+    border-radius: 0px;
 }
 
 #code{
