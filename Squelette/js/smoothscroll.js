@@ -1,79 +1,58 @@
-(function() {
+// Code goes here
 
-    'use strict';
+// based on
+// http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript
+// use href="#anchorID" in your hyperlinks 
+// with smoothScroll('destinationAnchorID');return false; as the onclick event.
+// <a href="#anchor-1" onclick="smoothScroll('anchor-1-id');">smooth scroll to Anchor 1<a/>
 
-   // Feature Test
-   if ( 'querySelector' in document && 'addEventListener' in window && Array.prototype.forEach ) {
 
-       // Function to animate the scroll
-       let smoothScroll = function (anchor, duration) {
+function currentYPosition() {
+    // Firefox, Chrome, Opera, Safari
+    if (self.pageYOffset) return self.pageYOffset;
+    // Internet Explorer 6 - standards mode
+    if (document.documentElement && document.documentElement.scrollTop)
+        return document.documentElement.scrollTop;
+    // Internet Explorer 6, 7 and 8
+    if (document.body.scrollTop) return document.body.scrollTop;
+    return 0;
+}
 
-           // Calculate how far and how fast to scroll
-           let startLocation = window.pageYOffset;
-           let endLocation = anchor.offsetTop;
-           let distance = endLocation - startLocation;
-           let increments = distance/(duration/16);
-           let stopAnimation;
 
-           // Scroll the page by an increment, and check if it's time to stop
-           let animateScroll = function () {
-               window.scrollBy(0, increments);
-               stopAnimation();
-           };
+function elmYPosition(eID) {
+    var elm = document.getElementById(eID);
+    var y = elm.offsetTop;
+    var node = elm;
+    while (node.offsetParent && node.offsetParent != document.body) {
+        node = node.offsetParent;
+        y += node.offsetTop;
+    } return y;
+}
 
-           // If scrolling down
-           if ( increments >= 0 ) {
-               // Stop animation when you reach the anchor OR the bottom of the page
-               stopAnimation = function () {
-                   let travelled = window.pageYOffset;
-                   if ( (travelled >= (endLocation - increments)) || ((window.innerHeight + travelled) >= document.body.offsetHeight) ) {
-                       clearInterval(runAnimation);
-                   }
-               };
-           }
-           // If scrolling up
-           else {
-               // Stop animation when you reach the anchor OR the top of the page
-               stopAnimation = function () {
-                   let travelled = window.pageYOffset;
-                   if ( travelled <= (endLocation || 0) ) {
-                       clearInterval(runAnimation);
-                   }
-               };
-           }
 
-           // Loop the animation function
-           let runAnimation = setInterval(animateScroll, 16);
-      
-       };
+function smoothScroll(eID) {
+    var startY = currentYPosition();
+    var stopY = elmYPosition(eID);
+    var distance = stopY > startY ? stopY - startY : startY - stopY;
+    if (distance < 100) {
+        scrollTo(0, stopY); return;
+    }
+    var speed = Math.round(distance / 100);
+    if (speed >= 20) speed = 20;
+    var step = Math.round(distance / 25);
+    var leapY = stopY > startY ? startY + step : startY - step;
+    var timer = 0;
+    if (stopY > startY) {
+        for ( var i=startY; i<stopY; i+=step ) {
+            setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+            leapY += step; if (leapY > stopY) leapY = stopY; timer++;
+        } return;
+    }
+    for ( var i=startY; i>stopY; i-=step ) {
+        setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+        leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+    }
+  return false;
+}
 
-       // Define smooth scroll links
-       let scrollToggle = document.querySelectorAll('.scroll');
 
-       // For each smooth scroll link
-       [].forEach.call(scrollToggle, function (toggle) {
-
-           // When the smooth scroll link is clicked
-           toggle.addEventListener('click', function(e) {
-
-               // Prevent the default link behavior
-               e.preventDefault();
-
-               // Get anchor link and calculate distance from the top
-               let dataID = toggle.getAttribute('href');
-               let dataTarget = document.querySelector(dataID);
-               let dataSpeed = toggle.getAttribute('data-speed');
-
-               // If the anchor exists
-               if (dataTarget) {
-                   // Scroll to the anchor
-                   smoothScroll(dataTarget, dataSpeed || 500);
-               }
-
-           }, false);
-
-       });
-
-   }
-
-})();
